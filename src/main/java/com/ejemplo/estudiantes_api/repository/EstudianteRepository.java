@@ -20,6 +20,4 @@ public interface EstudianteRepository extends JpaRepository<Estudiante, Long> {
     // Consulta personalizada equivalente mediante JPQL
     @Query("SELECT e FROM Estudiante e WHERE LOWER(e.programa) = LOWER(:programa)")
     List<Estudiante> buscarPorProgramaExacto(@Param("programa") String programa);
-
-    List<Estudiante> findByNombre(String nombre);
 }
